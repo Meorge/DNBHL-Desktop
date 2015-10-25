@@ -11,7 +11,7 @@ def getPuzzleInformation(text):
             root = etree.fromstring(theXML)
     except:
         #print('This puzzle does not exist.')
-        return 'NotFoundError'
+        return 'Not found. Make sure the string has no spaces and is uppercase.'
 
     resource = root.findall('./views/view/datasources/FileDataProvider/property[@name=\'data-location\']')[0].text
     hint = root.findall('./views/view/widgets/RFLayoutWidget[@id=\'modalhint\']/widgets/RFTextWidget/property')[0].text
